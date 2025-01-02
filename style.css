@@ -168,24 +168,24 @@ header h1 {
 #student-works {
     display: flex;
     justify-content: space-evenly ;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
-    margin: 16px;
-    padding: 16px;
+    margin: 20px;
+    padding: 20px;
 }
 
 .student-work {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 27vw;
+    width: 24vw;
     height: 100%;
     text-align: center;
     opacity: 1;
     transition: opacity 0.3s, transform 0.3s, border 0s;
     position: relative;
     padding: 0px;
-    margin:16px;
+    margin:20px;
     
 }
 
