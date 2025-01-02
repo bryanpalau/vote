@@ -151,11 +151,11 @@ body.voting-complete {
 header {
     background-color: #6200ea;
     color: #ffffff;
-    padding: 20px;
+    padding: 10px;
 }
 
 header h1 {
-    margin: 4px;
+    margin: 2px;
     font-size: 2rem;
     text-align: center;
 }
@@ -168,24 +168,24 @@ header h1 {
 #student-works {
     display: flex;
     justify-content: space-evenly ;
-    gap: 20px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin: 20px;
-    padding: 20px;
+    margin: 12px;
+    padding: 12px;
 }
 
 .student-work {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 18vw;
+    width: 29vw;
     height: 100%;
     text-align: center;
     opacity: 1;
     transition: opacity 0.3s, transform 0.3s, border 0s;
     position: relative;
     padding: 0px;
-    margin: 20px;
+    margin:12px;
     
 }
 
