@@ -9,25 +9,23 @@ body {
 
 /* Hide the default cursor */
 body {
-    cursor: none; /* Hide the default browser cursor */
+    cursor: none;
 }
 
 /* Custom glowing cursor */
 #custom-cursor {
     position: absolute;
-    width: 20px; /* Adjust size */
+    width: 20px;
     height: 20px;
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,255,0.7) 50%, rgba(255,0,255,0.1) 100%);
     box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.8);
-    pointer-events: none; /* Prevent interaction */
-    z-index: 9999; /* Make sure it's above everything */
-    transform: translate(-50%, -50%); /* Center the dot on the cursor */
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
     transition: transform 0.05s ease-out, opacity 0.1s;
     opacity: 1;
 }
-
-
 
 /* Style for the enlarge icon */
 .enlarge-icon {
@@ -86,27 +84,20 @@ body {
     z-index: 1001;
 }
 
-
-
-
-
+/* Transition effects for "Voting Complete" */
 body.voting-complete {
     animation: voting-complete-fade 0.5s ease-in-out forwards;
-  }
-  
-  @keyframes voting-complete-fade {
+}
+
+@keyframes voting-complete-fade {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      opacity: 0.9;
-      transform: scale(1.02);
+        opacity: 0.9;
+        transform: scale(1.02);
     }
-  }
-
-
-
-
+}
 
 /* Transition overlay */
 #transition-overlay {
@@ -127,7 +118,6 @@ body.voting-complete {
     animation: fade-in-out 2s ease-in-out;
 }
 
-/* Fade-in-out animation */
 @keyframes fade-in-out {
     0% {
         opacity: 0;
@@ -139,14 +129,6 @@ body.voting-complete {
         opacity: 0;
     }
 }
-
-
-
-
-
-  
-
-
 
 header {
     background-color: #6200ea;
@@ -160,14 +142,9 @@ header h1 {
     text-align: center;
 }
 
-/* header p {
-    margin: 5px 0;
-    font-size: 2rem;
-} */
-
 #student-works {
     display: flex;
-    justify-content: space-evenly ;
+    justify-content: space-evenly;
     gap: 20px;
     flex-wrap: wrap;
     margin: 20px;
@@ -182,11 +159,10 @@ header h1 {
     height: 100%;
     text-align: center;
     opacity: 1;
-    transition: opacity 0.3s, transform 0.3s, border 0s;
+    transition: opacity 0.3s, transform 0.3s;
     position: relative;
     padding: 0px;
-    margin:20px;
-    
+    margin: 20px;
 }
 
 .image-wrapper {
@@ -231,19 +207,6 @@ header h1 {
     transform: scale(1.1);
     border: 2px solid #ff83ff;
     border-radius: 8px;
-}
-
-.student-work.selected .image-wrapper::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #6200ea, #ff83ff);
-    z-index: -1;
-    filter: blur(8px);
 }
 
 .votes-wrapper {
@@ -313,9 +276,8 @@ header h1 {
     padding: 20px;
     border-radius: 8px;
     color: white;
-    text-align: left;
-    width: 80%;
     text-align: center;
+    width: 80%;
 }
 
 #dashboard h3 {
@@ -369,4 +331,3 @@ header h1 {
         transform: translate(-50%, -50%) scale(1);
     }
 }
-

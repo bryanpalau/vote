@@ -8,11 +8,10 @@
 </head>
 <body>
     <header>
-        <!-- <h1>Student Showcase</h1> -->
         <h1>Through Our Eyes: Finding the Beauty of WIST</h1>
-        <h2>1. 🖐🏻 Hover 🤏🏻 Up Down to Scroll </h1>
-        <h2>2. Pinch to Vote / Unvote / Enlarge</h1>
-        <h2>3. Sumbit Button to Finalize Votes</h1>
+        <h2>1. 🖐🏻 Hover 🤏🏻 Up Down to Scroll</h2>
+        <h2>2. Pinch to Vote / Unvote / Enlarge</h2>
+        <h2>3. Submit Button to Finalize Votes</h2>
     </header>
     <main>
         <!-- <button id="prev-btn">Previous</button>
@@ -180,43 +179,41 @@
                 </div>
             </div>
         </div>
-        <!-- <canvas id="output_canvas"></canvas> -->
-        <div id="custom-cursor"></div>
-        
-        <!-- Modal for Enlarged Image -->
-        <div id="image-modal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modal-image">
-        </div>
-        
-<!-- Buttons and Dashboard Section -->
-<div id="controls-container" style="display: flex; flex-direction: column; align-items: center; gap: 40px; margin: 40px;">
-    <!-- Submit Button -->
-    <div style="display: flex; justify-content: center; gap: 20px;">
-        <button id="submit-vote" disabled style="width: 150px;">Submit Vote</button>
-        <button id="vote-again" style="display: none; width: 150px;">Vote Again</button>
+    <div id="custom-cursor"></div>
+    
+    <!-- Modal for Enlarged Image -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
     </div>
+    
+    <!-- Buttons and Dashboard Section -->
+    <div id="controls-container" style="display: flex; flex-direction: column; align-items: center; gap: 40px; margin: 40px;">
+        <!-- Submit and Vote Again Buttons -->
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <button id="submit-vote" disabled style="width: 150px;">Submit Vote</button>
+            <button id="vote-again" style="display: none; width: 150px;">Vote Again</button>
+        </div>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" style="display: none; margin-top: 20px; width: 80%; text-align: center;">
-        <h3>Vote Summary</h3>
-        <ul id="vote-summary">
-            <!-- Dynamically generated content -->
-        </ul>
-    </section>
-</div>
+        <!-- Dashboard Section -->
+        <section id="dashboard" style="display: none; margin-top: 20px; width: 80%; text-align: center;">
+            <h3>Vote Summary</h3>
+            <ul id="vote-summary">
+                <!-- Dynamically generated content -->
+            </ul>
+        </section>
+    </div>
+</main>
 
+<!-- Audio Elements -->
+<audio id="vote-sound" src="assets/coin-sound.mp3"></audio>
+<audio id="vote-complete-sound" src="assets/vote-complete.mp3" preload="auto"></audio>
+<audio id="hover-sound" src="assets/hover-sound.mp3" preload="auto"></audio>
 
-
-    </main>
-
-    <audio id="vote-sound" src="assets/coin-sound.mp3"></audio>
-    <audio id="vote-complete-sound" src="assets/vote-complete.mp3" preload="auto"></audio>
-
-    <!-- MediaPipe Hands and utilities -->
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
-    <script src="main.js"></script>
-</body>
+<!-- MediaPipe Hands and utilities -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="main.js"></script>
+</body> 
 </html>

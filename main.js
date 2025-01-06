@@ -44,6 +44,7 @@ modal.addEventListener('click', (e) => {
 });
 
 const voteSound = new Audio('assets/coin-sound.mp3'); // Preload vote sound
+const hoverSound = new Audio('assets/hover-sound.mp3'); // Preload hover sound
 const voteCompleteSound = document.getElementById('vote-complete-sound'); // "Voting Complete" sound
 let isVotingCompleted = false; // State to track voting completion
 
@@ -65,9 +66,10 @@ document.querySelectorAll('.student-work').forEach((work) => {
         handleVoteToggle(work);
     });
 
-    // Add hover event listeners for visual feedback
+    // Add hover event listeners for visual feedback and sound
     work.addEventListener('mouseenter', () => {
         work.classList.add('selected');
+        playHoverSound(); // Play hover sound
     });
 
     work.addEventListener('mouseleave', () => {
@@ -104,6 +106,14 @@ function playVoteSound() {
     voteSound.currentTime = 0; // Reset playback to start
     voteSound.play().catch((error) => {
         console.error('Error playing sound:', error);
+    });
+}
+
+// Play the hover sound
+function playHoverSound() {
+    hoverSound.currentTime = 0; // Reset playback to start
+    hoverSound.play().catch((error) => {
+        console.error('Error playing hover sound:', error);
     });
 }
 
