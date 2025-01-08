@@ -27,6 +27,40 @@ body {
     opacity: 1;
 }
 
+
+
+
+
+/* View Design icon styling */
+.view-design-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px; /* Position in the top-left corner */
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    color: white;
+    opacity: 0.8;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.view-design-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+
+
+
 /* Style for the enlarge icon */
 .enlarge-icon {
     position: absolute;

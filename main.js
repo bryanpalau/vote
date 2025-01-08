@@ -31,6 +31,22 @@ document.querySelectorAll('.enlarge-icon').forEach((icon) => {
     });
 });
 
+// Add event listeners to "View Design" icons
+document.querySelectorAll('.view-design-icon').forEach((icon) => {
+    icon.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link behavior
+        e.stopPropagation(); // Stop the click from propagating to the parent
+
+        const designLink = e.target.dataset.link; // Get the Canva link from the data attribute
+        if (designLink) {
+            window.open(designLink, '_blank', 'noopener,noreferrer'); // Open the Canva link in a new tab
+        } else {
+            console.error('No design link found for this icon.');
+        }
+    });
+});
+
+
 // Close the modal
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
