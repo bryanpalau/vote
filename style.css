@@ -8,6 +8,13 @@ body {
     cursor: none;
 }
 
+header h1 {
+    margin: 2px;
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
 /* Custom glowing cursor */
 #custom-cursor {
     position: absolute;
