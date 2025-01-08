@@ -3,12 +3,8 @@ body {
     text-align: center;
     background-color: black;
     margin: 0;
-    padding: 0px;
+    padding: 0;
     color: #ffffff;
-}
-
-/* Hide the default cursor */
-body {
     cursor: none;
 }
 
@@ -23,19 +19,15 @@ body {
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: transform 0.05s ease-out, opacity 0.1s;
     opacity: 1;
+    transition: transform 0.05s ease-out, opacity 0.1s;
 }
-
-
-
-
 
 /* View Design icon styling */
 .view-design-icon {
     position: absolute;
     top: 5px;
-    left: 5px; /* Position in the top-left corner */
+    left: 5px;
     background-color: rgba(0, 0, 0, 0.2);
     width: 40px;
     height: 40px;
@@ -49,7 +41,6 @@ body {
     font-size: 1.4rem;
     text-decoration: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 2;
     cursor: pointer;
 }
 
@@ -57,9 +48,6 @@ body {
     transform: scale(1.2);
     opacity: 1;
 }
-
-
-
 
 /* Style for the enlarge icon */
 .enlarge-icon {
@@ -70,14 +58,12 @@ body {
     width: 40px;
     height: 40px;
     color: white;
-    opacity: 80%;
+    opacity: 0.8;
     border: none;
     border-radius: 8px;
-    padding: 5px;
-    cursor: pointer;
     font-size: 1.6rem;
+    cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 2;
 }
 
 .enlarge-icon:hover {
@@ -118,131 +104,23 @@ body {
     z-index: 1001;
 }
 
-/* Transition effects for "Voting Complete" */
-body.voting-complete {
-    animation: voting-complete-fade 0.5s ease-in-out forwards;
-}
-
-@keyframes voting-complete-fade {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.9;
-        transform: scale(1.02);
-    }
-}
-
-/* Transition overlay */
-#transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    color: #ff6ec7;
-    font-size: 3rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    animation: fade-in-out 2s ease-in-out;
-}
-
-@keyframes fade-in-out {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-header {
-    background-color: #6200ea;
-    color: #ffffff;
-    padding: 10px;
-}
-
-header h1 {
-    margin: 2px;
-    font-size: 2rem;
-    text-align: center;
-}
-
-#student-works {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px;
-    padding: 20px;
-}
-
-.student-work {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 27vw;
-    height: 100%;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 0.3s, transform 0.3s;
-    position: relative;
-    padding: 0px;
-    margin: 20px;
-}
-
-.image-wrapper {
-    position: relative;
-    z-index: 1;
-    border-radius: 8px;
-    overflow: visible;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-
-.student-work img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.student-work:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.student-work:hover .image-wrapper::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #6200ea, #ff83ff);
-    z-index: -1;
-    filter: blur(8px);
-}
-
-.student-work.selected,
+/* Highlight effect for just-voted image */
 .student-work.voted {
-    opacity: 1;
     transform: scale(1.1);
-    border: 2px solid #ff83ff;
-    border-radius: 8px;
+    border: 3px solid #ff83ff;
+    animation: highlight 0.5s ease-in-out;
 }
 
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+/* Votes wrapper */
 .votes-wrapper {
     position: absolute;
     bottom: 0;
@@ -253,7 +131,6 @@ header h1 {
     text-align: center;
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    z-index: 2;
 }
 
 .votes-wrapper p {
@@ -268,100 +145,85 @@ header h1 {
     font-weight: bold;
 }
 
-#submit-vote,
-#vote-again {
-    width: 150px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #ff6ec7;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
 
-#controls-container {
+
+
+
+#student-works {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 40px;
-    padding: 40px;
+    justify-content: space-evenly;
+    gap: 30px; /* Adds spacing between rows */
+    flex-wrap: wrap; /* Allows wrapping to avoid jam-packed layout */
+    margin: 20px auto; /* Centers the grid with some margin */
+    padding: 20px; /* Adds padding around the container */
+    max-width: 1200px; /* Sets a max width for a consistent layout */
+    box-sizing: border-box; /* Ensures padding is included in total width */
 }
 
-#submit-vote:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-#submit-vote:hover:not(:disabled),
-#vote-again:hover {
-    background-color: #6200ea;
-    transform: scale(1.05);
-}
-
-#vote-again {
-    display: none;
-}
-
-#dashboard {
-    margin: 20px auto;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
+.student-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 30px); /* Adjusts width to fit 4 in a row with gap */
+    margin: 15px; /* Adds margin around each image */
     text-align: center;
-    width: 80%;
+    position: relative;
+    border-radius: 8px; /* Rounds the corners slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    background: rgba(255, 255, 255, 0.05); /* Adds a subtle background */
 }
 
-#dashboard h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem;
-    color: #ff6ec7;
+.student-work:hover {
+    transform: scale(1.05); /* Scales slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increases shadow on hover */
 }
 
-#vote-summary {
-    list-style: none;
-    padding: 0;
+.image-wrapper img {
+    width: 100%; /* Ensures the image takes full width */
+    border-radius: 8px; /* Matches the card's rounded corners */
+    object-fit: cover; /* Ensures images retain aspect ratio */
 }
 
-#vote-summary li {
+.votes-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.votes-wrapper p {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+}
+
+.votes-wrapper p span {
     font-size: 1.2rem;
-    margin: 5px 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Animation for vote popup */
-.vote-animation {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 6rem;
     color: #ff6ec7;
     font-weight: bold;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-    animation: vote-popup 1s ease-in-out;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
 }
 
-@keyframes vote-popup {
+/* Highlight animation when voted */
+.student-work.highlight-voted {
+    border: 3px solid #ff83ff;
+    animation: glow 0.8s ease-in-out;
+}
+
+@keyframes glow {
     0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
+        box-shadow: 0 0 10px #ff83ff;
     }
     50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0 20px #ff83ff;
     }
     100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px #ff83ff;
     }
 }
