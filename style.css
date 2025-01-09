@@ -3,14 +3,14 @@ body {
     text-align: center;
     background-color: black;
     margin: 0;
-    padding: 10px;
+    padding: 0;
     color: #ffffff;
     cursor: none;
 }
 
 header h1 {
     margin: 2px;
-    padding: 20px;
+    padding: 10px;
     font-size: 2rem;
     text-align: center;
 }
@@ -18,8 +18,8 @@ header h1 {
 /* Custom glowing cursor */
 #custom-cursor {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,255,0.7) 50%, rgba(255,0,255,0.1) 100%);
     box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.8);
@@ -159,11 +159,11 @@ header h1 {
 #student-works {
     display: flex;
     justify-content: space-evenly;
-    gap: 20px; /* Adds spacing between rows */
+    gap: 30px; /* Adds spacing between rows */
     flex-wrap: wrap; /* Allows wrapping to avoid jam-packed layout */
     margin: 20px auto; /* Centers the grid with some margin */
     padding: 20px; /* Adds padding around the container */
-    max-width: 100%; /* Sets a max width for a consistent layout */
+    max-width: 1200px; /* Sets a max width for a consistent layout */
     box-sizing: border-box; /* Ensures padding is included in total width */
 }
 
@@ -171,8 +171,8 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(30% - 20px); /* Adjusts width to fit 4 in a row with gap */
-    margin: 10px; /* Adds margin around each image */
+    width: calc(25% - 30px); /* Adjusts width to fit 4 in a row with gap */
+    margin: 15px; /* Adds margin around each image */
     text-align: center;
     position: relative;
     border-radius: 8px; /* Rounds the corners slightly */
